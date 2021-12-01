@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background: rgb(68,190,222);
+    background: linear-gradient(0deg, rgba(68,190,222,1) 0%, rgba(118,255,203,1) 100%);
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+h3{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    text-shadow: 0px 2px 4px grey;
+}
+
+.todo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    height: 100vh;
+    background: rgb(245,246,246);
+    background: linear-gradient(0deg, rgba(245,246,246,0.23853291316526615) 0%, rgba(218,226,223,1) 100%);
+    box-shadow: 0px 2px 5px rgb(92, 88, 88);
+    border-radius: 20px;
+    height: auto;
+    width: 500px;
+    padding: 50px;
+    border: 1px solid cornflowerblue;
+}
+
+.todo div{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+input[type="text"]{
+    padding: 10px;
+    border: 1px solid rgb(14, 58, 141);
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    width: 90%;
+}
+
+button{
+    padding: 10px;
+    margin-left:5px;
+    background-color: rgb(31, 57, 105);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+ul{
+    width: 100%;
+}
+
+ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin-top: 20px;
+    color: #fff;
+    background-color: rgb(92, 140, 185);
+    border-radius: 3px;
+    width: 100%;
+}
+
+.liClass{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin-top: 20px;
+    color: #fff;
+    background-color: rgb(92, 140, 185);
+    border-radius: 3px;
+    width: 100%;
+}
+
+.liSpanClass{
+    padding: 0px 5px;
+}
+
+ul li span{
+    padding: 0px 5px;
+}
+
+.error{
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .todo {
+      width: 100%;
+      max-width: 100% !important;
+    }
+}
