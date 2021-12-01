@@ -63,3 +63,13 @@ function deleteItem(e){
         e.parentNode.remove(e);
     }, 500);
 }
+
+let input = getId(todoItem);
+let createBtn = getId("createTodo");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    createBtn.click();
+  }
+});
