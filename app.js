@@ -8,6 +8,7 @@ function getId(data){
 
 function create(){
     let item = getId(todoItem);
+    let clearAllBtn = getId('clearAll');
     let error = getId(errorShow);
 
     if (item.value != "") {
@@ -18,6 +19,8 @@ function create(){
         } else {
             error.innerHTML = ``;
             let todoList = getId(showList);
+            clearAllBtn.classList.remove('d-none');
+            clearAllBtn.classList.add('d-block');
             let li = document.createElement("li");
             let span = document.createElement("span");
             let button = document.createElement("button");
@@ -25,8 +28,9 @@ function create(){
             li.appendChild(span);
             li.appendChild(button);
             button.appendChild(i);
-            li.setAttribute("contentEditable",true);
-            li.setAttribute("onblur","edit(this)");
+            span.setAttribute("contentEditable",true);
+            span.setAttribute("onblur","edit(this)");
+            span.setAttribute("onclick","enter(this)");
             button.setAttribute("contentEditable",false);
             li.setAttribute("onkeypress","return (this.innerText.length < 30)");
             li.setAttribute("onkeyup","return (this.innerText.length < 30)");
@@ -44,10 +48,12 @@ function create(){
     }
 }
 
-function clearAll(){
+function clearAll(e){
     let list = getId(showList);
     error.innerHTML = ``;
     list.innerHTML = "";
+    e.classList.remove('d-block');
+    e.classList.add('d-none');
 }
 
 function edit(e){
@@ -62,6 +68,15 @@ function deleteItem(e){
     setTimeout(function() {
         e.parentNode.remove(e);
     }, 500);
+}
+
+function enter(e){
+    e.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            return false;
+        }
+    });   
 }
 
 let input = getId(todoItem);
